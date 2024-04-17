@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import img from "../../assets/Amazing pearls in worship @tcnikejacentre.jpg"
-import img1 from "../../assets/Pearls of TCN. Our Beautiful and delectable Pastor @toyinpoyemade and Dr Kehinde Osinaike. Thank @tcnikejacentre for this lovely picture with @let.repost.Beautiful Pearl reading this. Take this as a si.webp"
+import img1 from "../../assets/Pastor toyin.webp"
 import pics from "../../assets/Radiant pearls from @tcnlekki (1).jpg"
 import pics1 from "../../assets/Radiant pearls from @tcnlekki (2).jpg"
 import pics2 from "../../assets/Radiant pearls from @tcnlekki (3).jpg"

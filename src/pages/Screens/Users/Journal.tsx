@@ -65,8 +65,18 @@ const Journal = () => {
             <input  placeholder="My biggest dreams " className="h-[50px] bg-teal-300 text-white px-[10px] placeholder-gray-700 focus:outline-none ]" />
             </div>
             <div className="flex flex-col my-[10px]">
-              <label className="text-[17px] font-semibold ">Add Image for better view</label>
-            <input  placeholder="My biggest dreams " className="h-[50px] bg-teal-300 text-white px-[10px] placeholder-gray-700 focus:outline-none " type="" />
+              {/* <label className="text-[17px] font-semibold ">Add Image for better view</label>
+            <input  placeholder="My biggest dreams " className="h-[50px] bg-teal-300 text-white px-[10px] placeholder-gray-700 focus:outline-none " type="" /> */}
+            <input
+                className='hidden'
+                type='file'
+                accept='image/png, image/jpg, image/jpeg'
+                id="imageTitle"
+                multiple
+            />
+             <label className='bg-purple-700 text-white py-2 px-8 rounded hover:scale-[1.02] hover:cursor-pointer duration-300 transition-all mt-3 '
+                htmlFor='imageTitle'
+            >upload images</label>
             </div>
           </div>
           <p className="p-[10px] text-pink-500 font-semibold">{footer}</p>

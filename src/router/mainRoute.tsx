@@ -14,6 +14,8 @@ import Prayer from "../pages/Screens/Users/Prayer";
 import Events from "../pages/Screens/Users/Events";
 import Notifications from "../pages/Screens/Users/Notifications";
 import Settings from "../pages/Screens/Users/Settings";
+import AdminLayout from "../components/layout/AdminLayout";
+import Dashboard from "../pages/Screens/Admin/Dashboard";
 
 
 export const MainRoute = createBrowserRouter([
@@ -88,6 +90,17 @@ export const MainRoute = createBrowserRouter([
                 path: "settings",
                 index: true,
                 element: <Settings/>
+            },
+            {
+                path: "/home/admin",
+                element : <AdminLayout/>,
+                children:[
+                    {
+                        path: "dashboard",
+                        index: true,
+                        element: <Dashboard/>
+                    }
+                ]
             }
         ]
     }
