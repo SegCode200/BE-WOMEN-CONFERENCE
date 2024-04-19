@@ -6,7 +6,7 @@ import {FaClock, FaTimeline} from "react-icons/fa6"
 
 
 const HomeScreen = () => {
-  const [journal, setJournal] = useState('')
+  // const [journal, setJournal] = useState('')
   return (
     <div className="h-screen bg-teal-50/45">
       <Head name="Dashboard"/>
