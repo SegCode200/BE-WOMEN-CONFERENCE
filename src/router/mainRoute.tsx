@@ -90,7 +90,9 @@ export const MainRoute = createBrowserRouter([
                 path: "settings",
                 index: true,
                 element: <Settings/>
-            },
+            }
+        ]},
+        
             {
                 path: "/home/admin",
                 element : <AdminLayout/>,
@@ -102,6 +104,6 @@ export const MainRoute = createBrowserRouter([
                     }
                 ]
             }
-        ]
-    }
+        
+    
 ])

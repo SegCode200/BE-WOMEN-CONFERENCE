@@ -1,62 +1,47 @@
 import Head from "../../components/Static/Head"
-import { MdOutlineBookmarkAdd } from "react-icons/md"
-import { FaDeleteLeft } from "react-icons/fa6"
-import pics from "../../assets/20 Ways Churches can Encourage Prayer_1619798433_600x400.webp"
+import {FaClock, FaTimeline} from "react-icons/fa6"
+// import { MdOutlineBookmarkAdd } from "react-icons/md"
+// import { FaDeleteLeft } from "react-icons/fa6"
+// import pics from "../../assets/20 Ways Churches can Encourage Prayer_1619798433_600x400.webp"
 
 
 const HomeScreen = () => {
+  const [journal, setJournal] = useState('')
   return (
     <div className="h-screen bg-teal-50/45">
       <Head name="Dashboard"/>
-      <div className="p-[15px]">
-            <h1 className="text-2xl font-bold text-gray-900">List of your favourite Journal </h1>
-   <div className="flex gap-10px">
+      <div className="px-[15px] flex">
+           
+            
+   <div className="h-[calc(100vh-60px)] border-r-[3px] border-r-teal-600 w-[250px] overflow-y-scroll">
     {/* Holder */}
-           <div>
-            <div className="w-[350px] h-[250px]">
-            <img src={pics} className="w-full h-full"/>
-            </div>
-            <div className="w-[72%]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, impedit est. 
-            </div>
-            <div className="text-[14px] text-pink-600 font-semibold">
-              Sept,20th 2024
-            </div>
-            <div className="flex items-center mt-[10px]">
-              <input placeholder="Prayer requests " className="focus:outline-none h-[40px] bg-slate-100 px-[10px] rounded-md"/>
-              <div className="text-[30px] text-teal-600 mx-[10px]">
-                <MdOutlineBookmarkAdd/>
-              </div>
-              <div className="text-[30px] text-teal-600 mx-[10px]">
-                <FaDeleteLeft/>
-              </div>
-            </div>
-           
-          </div>
-          {/* Holder 2 */}
-          <div>
-            <div className="w-[350px] h-[250px]">
-            <img src={pics} className="w-full h-full"/>
-            </div>
-            <div className="w-[72%]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, impedit est. 
-            </div>
-            <div className="text-[14px] text-pink-600 font-semibold">
-              Sept,20th 2024
-            </div>
-            <div className="flex items-center mt-[10px]">
-              <input placeholder="Prayer requests " className="focus:outline-none h-[40px] bg-slate-100 px-[10px] rounded-md"/>
-              <div className="text-[30px] text-teal-600 mx-[10px]">
-                <MdOutlineBookmarkAdd/>
-              </div>
-              <div className="text-[30px] text-teal-600 mx-[10px]">
-                <FaDeleteLeft/>
-              </div>
-            </div>
-           
-          </div>
+    <h1 className="text-2xl font-bold text-gray-900">List of all Journal </h1>
+    <div className=" bg-teal-100 border-y-[1px] flex flex-col border-y-slate-400 cursor-pointer">
+      <span className="text-pink-500 font-semibold">My Biggest Dream</span>
+      <span className="text-[13px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque explicabo magnam commodi!</span>
+      <div className="text-[12px] font-bold mt-[5px] flex ">
+        <span className="flex items-center mr-[5px]"> <FaClock className="mr-[5px]"/>9:38am</span>
+        <span className="flex items-center "> <FaTimeline className="mr-[5px]"/>Nov 4 2024</span>
+      </div>
+    </div>
+    <div className=" bg-teal-100 border-y-[1px] my-[3px] flex flex-col border-y-slate-400 cursor-pointer">
+      <span className="text-pink-500 font-semibold">My Biggest Dream</span>
+      <span className="text-[13px]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque explicabo magnam commodi!</span>
+      <div className="text-[12px] font-bold mt-[5px] flex ">
+        <span className="flex items-center mr-[5px]"> <FaClock className="mr-[5px]"/>9:38am</span>
+        <span className="flex items-center "> <FaTimeline className="mr-[5px]"/>Nov 4 2024</span>
+      </div>
+    </div>
    </div>
       </div>
+      {/* Journal View */}
+      <div>
+        <div>
+          const [journal, setJournal] = useState('')
+
+        </div>
+      </div>
+
     </div>
   )
 }

@@ -19,7 +19,7 @@ const AdminSlider = () => {
         <div className="w-full h-auto mt-[100px]">
         <div>
         <NavLink
-          to="/home/user/dashboard"
+          to="/home/admin/dashboard"
           
           className={({ isActive, }) =>
             isActive
@@ -35,7 +35,7 @@ const AdminSlider = () => {
         {/* Journal */}
         <div className="text-red-900 no-underline">
         <NavLink
-          to="/home/user/journal"
+          to="/home/admin/"
           style={{marginTop: "5px"}}
           className={({ isActive, }) =>
             isActive
@@ -52,7 +52,7 @@ const AdminSlider = () => {
         {/* Prayer */}
         <div className="text-red-900 no-underline">
         <NavLink
-          to="/home/user/prayer"
+          to="/home/admin/"
           style={{marginTop: "5px"}}
           className={({ isActive, }) =>
             isActive
@@ -68,7 +68,7 @@ const AdminSlider = () => {
         {/* Events */}
         <div className="text-red-900 no-underline">
         <NavLink
-          to="/home/user/events"
+          to="/home/admin/"
           style={{marginTop: "5px", textDecoration: "none"}}
           className={({ isActive, }) =>
             isActive
@@ -87,7 +87,7 @@ const AdminSlider = () => {
         <div>
           {/* Notifications */}
           <NavLink
-          to="/home/user/notify"
+          to="/home/admin/"
           style={{textDecoration: "none"}}
           className={({ isActive, }) =>
             isActive
@@ -103,7 +103,7 @@ const AdminSlider = () => {
           <div>
             
             <NavLink
-          to="/home/user/settings"
+          to="/home/admin/"
           className={({ isActive, }) =>
             isActive
               ? "duration-500 transition-all p-2 rounded-sm text-white cursor-pointer font-medium my-2 flex items-center justify-between hover:text-white bg-gradient-to-r  from-teal-600 to-pink-600"
