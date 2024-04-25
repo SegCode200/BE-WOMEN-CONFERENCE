@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 import pics from "../../assets/be logo.png"
 import { MdDashboard } from "react-icons/md"
-import { FaBookJournalWhills,FaFileWaveform  } from "react-icons/fa6"
+import { FaBookJournalWhills,FaFileWaveform, FaLocationDot  } from "react-icons/fa6"
 import { SiGotomeeting } from "react-icons/si"
-import { BsChatSquareTextFill } from "react-icons/bs"
+import { BsChatSquareTextFill, BsPeople } from "react-icons/bs"
 import { IoSettingsOutline } from "react-icons/io5"
 import { BiLogOut } from "react-icons/bi";
 
@@ -16,7 +16,7 @@ const Slider = () => {
           <span className="text-white font-bold">TCN WOMEN</span>
         </div>
 
-        <div className="w-full h-auto mt-[100px]">
+        <div className="w-full h-auto mt-[60px]">
         <div>
         <NavLink
           to="/home/user/dashboard"
@@ -52,7 +52,7 @@ const Slider = () => {
         {/* Prayer */}
         <div className="text-red-900 no-underline">
         <NavLink
-          to="/home/user/prayer"
+          to="/home/user/social"
           style={{marginTop: "5px"}}
           className={({ isActive, }) =>
             isActive
@@ -60,7 +60,7 @@ const Slider = () => {
               : "duration-500 transition-all p-2 rounded-sm hover:bg-teal-500 text-white cursor-pointer font-medium my-2 flex items-center justify-between decoration-white hover:text-white "
           }
         >
-          Prayer
+          Social
           <SiGotomeeting />
         </NavLink>
         </div>
@@ -81,9 +81,41 @@ const Slider = () => {
         </NavLink>
         </div>
 
+        {/* Community */}
+        <div className="text-red-900 no-underline">
+        <NavLink
+          to="/home/user/community"
+          style={{marginTop: "5px", textDecoration: "none"}}
+          className={({ isActive, }) =>
+            isActive
+              ? "duration-500 transition-all p-2 rounded-sm text-white cursor-pointer font-medium my-2 flex items-center justify-between hover:text-white bg-gradient-to-r  from-teal-600 to-pink-600"
+              : "duration-500 transition-all p-2 rounded-sm hover:bg-teal-500 text-white cursor-pointer font-medium my-2 flex items-center justify-between decoration-white hover:text-white "
+          }
+        >
+          Community
+          <BsPeople  />
+        </NavLink>
         </div>
 
-       <div className="mt-[90px]">
+        </div>
+
+       <div className="mt-[30px]">
+       <div>
+          {/* Notifications */}
+          <NavLink
+          to="/home/user/location"
+          style={{textDecoration: "none"}}
+          className={({ isActive, }) =>
+            isActive
+              ? "duration-500 transition-all p-2 rounded-sm text-white cursor-pointer font-medium my-2 flex items-center justify-between hover:text-white bg-gradient-to-r  from-teal-600 to-pink-600"
+              : "duration-500 transition-all p-2 rounded-sm hover:bg-teal-500 text-white cursor-pointer font-medium my-2 flex items-center justify-between decoration-white hover:text-white "
+          }
+        >
+          Nearest Location
+          <FaLocationDot  />
+        </NavLink>
+        </div>
+
         <div>
           {/* Notifications */}
           <NavLink

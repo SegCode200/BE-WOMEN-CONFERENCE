@@ -10,12 +10,19 @@ import AuthLayout from "../components/layout/AuthLayout";
 import HomeScreen from "../pages/Screens/HomeScreen";
 import Journal from "../pages/Screens/Users/Journal";
 import Community from "../pages/Screens/Users/Community";
-import Prayer from "../pages/Screens/Users/Prayer";
+import Social from "../pages/Screens/Users/Prayer";
 import Events from "../pages/Screens/Users/Events";
 import Notifications from "../pages/Screens/Users/Notifications";
 import Settings from "../pages/Screens/Users/Settings";
 import AdminLayout from "../components/layout/AdminLayout";
 import Dashboard from "../pages/Screens/Admin/Dashboard";
+import DifferentLocation from "../pages/Screens/Users/DifferentLocation";
+import EventManagement from "../pages/Screens/Admin/EventManagement";
+import UserManagement from "../pages/Screens/Admin/UserManagement";
+import ContentManagement from "../pages/Screens/Admin/ContentManagement";
+import Analytics from "../pages/Screens/Admin/Analytics";
+import PushNotifications from "../pages/Screens/Admin/PushNotifications";
+import Profile from "../pages/Screens/Admin/Profile";
 
 
 export const MainRoute = createBrowserRouter([
@@ -70,9 +77,9 @@ export const MainRoute = createBrowserRouter([
                 element: <Community/>
             },
             {
-                path: "prayer",
+                path: "social",
                 index: true,
-                element: <Prayer/>
+                element: <Social/>
             },
             {
                 path: "events",
@@ -84,6 +91,11 @@ export const MainRoute = createBrowserRouter([
                 path: "notify",
                 index: true,
                 element: <Notifications/>
+            },
+            {
+                path: "location",
+                index: true,
+                element: <DifferentLocation/>
             }
             ,
             {
@@ -101,7 +113,38 @@ export const MainRoute = createBrowserRouter([
                         path: "dashboard",
                         index: true,
                         element: <Dashboard/>
-                    }
+                    },
+                    {
+                        path: "events",
+                        index: true,
+                        element: <EventManagement/>
+                    },
+                    {
+                        path: "users",
+                        index: true,
+                        element: <UserManagement/>
+                    },
+                    {
+                        path: "content",
+                        index: true,
+                        element: <ContentManagement/>
+                    },
+                    {
+                        path: "analytics",
+                        index: true,
+                        element: <Analytics/>
+                    },
+                    {
+                        path: "notifications",
+                        index: true,
+                        element: <PushNotifications/>
+                    },
+                    {
+                        path: "profile",
+                        index: true,
+                        element: <Profile/>
+                    },
+
                 ]
             }
         
