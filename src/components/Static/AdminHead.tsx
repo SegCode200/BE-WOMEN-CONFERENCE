@@ -6,14 +6,31 @@ interface iData{
   name: string;
 }
 const AdminHead: React.FC<iData> = ({name}) => {
+  const getFormattedDate = () => {
+    const now = new Date();
+    
+    // Formatter with locale and options for a more detailed date format
+    const options = { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric' 
+    };
+    
+    const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(now);
+    return formattedDate;
+  };
+  
+
+  const currentDate = getFormattedDate()
 
   const [active, setActive] = useState(false)
   const [active1, setActive1] = useState(false)
   return (
     <div className="flex h-[60px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white items-center px-[15px] justify-between flex-1">
       <span className="uppercase font-extrabold text-[25px] text-teal-500">{name}</span>
-      <span className="uppercase font-extrabold text-2xl">
-        Welcome Back Admin
+      <span className="text-black font-extrabold text-2xl">
+        {currentDate}
       </span>
 
 
