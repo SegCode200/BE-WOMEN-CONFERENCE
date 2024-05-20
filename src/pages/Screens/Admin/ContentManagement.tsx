@@ -38,13 +38,13 @@ const ContentManagement = () => {
     };
 
   return (
-    <div className="h-screen bg-teal-50/45 w-[84%]">
+    <div className="h-auto bg-teal-50/45  md:w-[84%] lg:w-[84%] w-[100%]">
     <AdminHead name="Content Management"/>
-    <div className=" bg-gray-100 p-6 flex flex-col space-y-6">
+    <div className=" bg-gray-100 p-6 flex flex-col space-y-6 max-sm:space-y-4">
       {/* Header Section */}
       <header className="bg-teal-500 p-6 rounded-lg shadow">
-        <h1 className="text-2xl font-bold text-white">Content Management</h1>
-        <p className="text-gray-200 mt-2">Manage prayer prompts, announcements, and other content.</p>
+        <h1 className="text-2xl font-bold text-white max-sm:text-lg">Content Management</h1>
+        <p className="text-gray-200 mt-2 max-sm:text-sm">Manage prayer prompts, announcements, and other content.</p>
       </header>
 
       {/* Content List */}
@@ -58,10 +58,10 @@ const ContentManagement = () => {
         </button>
         <ul className="mt-4 space-y-4">
           {contentList.map((content) => (
-            <li key={content.id} className="p-4 bg-gray-50 rounded-lg flex justify-between items-center">
+            <li key={content.id} className="p-4 bg-gray-50 rounded-lg flex justify-between items-center max-sm:items-start max-sm:flex-col">
               <div>
                 <h3 className="font-bold text-teal-700">{content.title}</h3>
-                <p className="text-gray-600">{content.body}</p>
+                <p className="text-gray-600 my-3">{content.body}</p>
               </div>
               <div className="flex space-x-4">
                 <button
@@ -84,8 +84,8 @@ const ContentManagement = () => {
 
       {/* Modal for Adding/Editing Content */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-1/2">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center top-0 h-screen z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-[90%]">
             <h2 className="text-2xl font-bold text-teal-700">{editingContent ? 'Edit Content' : 'Add New Content'}</h2>
             <input
               type="text"

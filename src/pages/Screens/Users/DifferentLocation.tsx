@@ -31,7 +31,7 @@ const location = [
 
 const DifferentLocation = () => {
   return (
-    <div className="h-screen bg-teal-50/45 flex flex-col">
+    <div className="bg-teal-50/45 h-screen md:w-[84%] lg:w-[84%] w-[100%]">
     <Head name="Location"/>
     <div className="map">
       <h2 className="map-h2">Check our the Nearest TCN WOMEN CENTRE WITHIN YOUR PLACE</h2>

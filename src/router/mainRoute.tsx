@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import  { lazy, Suspense } from 'react';
 import LandPage from "../pages/LandPage";
 import Layout from "../components/layout/Layout";
 import Register from "../pages/Auth/Register";
@@ -7,7 +8,7 @@ import Login from "../pages/Auth/Login";
 import Password from "../pages/Auth/Password";
 import MailSend from "../pages/Auth/MailSend";
 import AuthLayout from "../components/layout/AuthLayout";
-import HomeScreen from "../pages/Screens/HomeScreen";
+import ListJournal from "../pages/Screens/Users/ListJournal";
 import Journal from "../pages/Screens/Users/Journal";
 import Community from "../pages/Screens/Users/Community";
 import Social from "../pages/Screens/Users/Prayer";
@@ -15,7 +16,7 @@ import Events from "../pages/Screens/Users/Events";
 import Notifications from "../pages/Screens/Users/Notifications";
 import Settings from "../pages/Screens/Users/Settings";
 import AdminLayout from "../components/layout/AdminLayout";
-import Dashboard from "../pages/Screens/Admin/Dashboard";
+const Dashboard = lazy(()=>import ( "../pages/Screens/Admin/Dashboard"))
 import DifferentLocation from "../pages/Screens/Users/DifferentLocation";
 import EventManagement from "../pages/Screens/Admin/EventManagement";
 import UserManagement from "../pages/Screens/Admin/UserManagement";
@@ -23,6 +24,8 @@ import ContentManagement from "../pages/Screens/Admin/ContentManagement";
 import Analytics from "../pages/Screens/Admin/Analytics";
 import PushNotifications from "../pages/Screens/Admin/PushNotifications";
 import Profile from "../pages/Screens/Admin/Profile";
+import UserDashboard from "../pages/Screens/Users/UserDashboard";
+import GetStartedPage from "../pages/Auth/GetStartedPage";
 
 
 export const MainRoute = createBrowserRouter([
@@ -39,6 +42,10 @@ export const MainRoute = createBrowserRouter([
     {
         path: "/register",
         element: <Register/>
+    },
+    {
+        path: "/getstarted",
+        element: <GetStartedPage/>
     },
     {
         path: "/login",
@@ -64,12 +71,17 @@ export const MainRoute = createBrowserRouter([
             {
                 index: true,
                 path: "dashboard",
-                element: <HomeScreen />
+                element: <UserDashboard />
             },
             {
                 path: "journal",
                 index:true,
                 element: <Journal/>
+            },
+            {
+                index: true,
+                path: "listjournal",
+                element: <ListJournal />
             },
             {
                 path: "community",
@@ -112,7 +124,10 @@ export const MainRoute = createBrowserRouter([
                     {
                         path: "dashboard",
                         index: true,
-                        element: <Dashboard/>
+                        element: 
+                        <Suspense fallback={<div>Loading...</div>}>
+                        <Dashboard/>
+                        </Suspense>
                     },
                     {
                         path: "events",

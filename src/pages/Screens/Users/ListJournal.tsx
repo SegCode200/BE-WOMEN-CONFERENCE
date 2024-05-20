@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Head from "../../components/Static/Head"
-import pics from "../../assets/20 Ways Churches can Encourage Prayer_1619798433_600x400.webp"
+import Head from "../../../components/Static/Head"
+import pics from "../../../assets/20 Ways Churches can Encourage Prayer_1619798433_600x400.webp"
 import { FaClock, FaTimeline } from "react-icons/fa6";
 import { FaRegEdit } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 // import { RiTimerFlashLine } from "react-icons/ri"
 
 
@@ -20,22 +21,28 @@ const Data =[
 ]
 
 
-const HomeScreen = () => {
+const ListJournal = () => {
 
   const [selectedJournal, setSelectedJournal] = useState(null);
+  const [openJournal, closeJournal] = useState(false);
 
   const handleSelectJournal = (Journal) => {
     setSelectedJournal(Journal);
   };
+
+
   const JournalList = ({ Journal, onSelectJournal })  => {
     return (
-      <div className="h-[calc(100vh-90px)] border-r-[3px] border-r-teal-600 w-[450px] overflow-y-scroll">
+      <div className=" border-r-[3px] lg:border-r-teal-600 sm:w-[300px]  lg:w-[450px]  sm:overflow-y-scroll">
         <h2 className="text-2xl font-bold text-gray-900">List of all Journal </h2>
       {/* Holder */}
       
    
          {Journal.map((Journal)=>(
-      <div className=" bg-teal-100 border-y-[1px] flex flex-col border-y-slate-400 cursor-pointer mt-[1px] " key={Journal.id} onClick={() => onSelectJournal(Journal)} >
+      <div className=" bg-teal-100 border-y-[1px] flex flex-col border-y-slate-400 cursor-pointer mt-[1px] " key={Journal.id} onClick={()=>{
+        onSelectJournal(Journal)
+        closeJournal(true)
+      }} >
       <span className="text-pink-500 font-semibold">{Journal.title}</span>
       <span className="text-[13px]">{Journal.description.substring(0,90)}</span>
       <div className="text-[12px] font-bold mt-[5px] flex text-teal-700 ">
@@ -49,16 +56,16 @@ const HomeScreen = () => {
   };
   const JournalDetails = ({ Journal }) => {
     return (
-      <div className="bg-white p-4 h-[calc(100vh-80px)]">
+      <div className="bg-white p-4">
         <div className="flex items-center  mb-4 w-full justify-between">
-        <h2 className="text-xl font-bold bg-teal-700 text-white p-[5px] ">{Journal.title}</h2>
+        <h2 className="text-xl max-md:text-sm font-bold bg-teal-700 text-white p-[5px] ">{Journal.title}</h2>
         <div className="flex font-semibold text-[12px] text-pink-500 items-center gap-[5px]">
           <FaClock className=""/>
           <span className="">{Journal.date}</span>
           <span>{Journal.time}</span>
         </div>
         </div>
-        <div className="w-[300px] h-[200px] mb-[10px]">
+        <div className="w-[300px] h-[200px] max-md:w-[99%] max-md:h-[150px] mb-[10px]">
           <img src={Journal.photo} className="w-full h-full"/>
         </div>
         <p className="text-teal-500 font-normal">{Journal.description}</p>
@@ -69,23 +76,58 @@ const HomeScreen = () => {
       </div>
     );
   };
+  const JournalDetails1 = ({ Journal }) => {
+    return (
+        <div className="h-screen object-cover z-[9999] top-0 absolute left-0 bg-teal-200/65 w-full flex justify-center items-center">
+          <div>
+              <RxCross2 className="text-[30px] text-white  absolute right-[5%]  top-[12%]    rounded-[50%]  p-[5px] cursor-pointer bg-pink-500" onClick={()=>(
+                closeJournal(false)
+              )}/>
+              </div>
+             <div className="bg-white p-4 w-[80%]">
+        <div className="flex items-center  mb-4 w-full justify-between">
+        <h2 className="text-xs  font-bold bg-teal-700 text-white p-[5px] ">{Journal.title}</h2>
+        <div className="flex font-semibold text-[12px] text-pink-500 items-center gap-[5px]">
+          <FaClock className=""/>
+          <span className="">{Journal.date}</span>
+          <span>{Journal.time}</span>
+        </div>
+        </div>
+        <div className="w-[230px] h-[150px] mb-[10px]">
+          <img src={Journal.photo} className="w-full h-full"/>
+        </div>
+        <p className="text-teal-500 font-normal text-[13px]">{Journal.description}</p>
+        <div className="text-pink-800 flex mt-[20px] cursor-pointer">
+          <FaRegEdit size={30}/>
+        </div>
+      
+      </div>
+
+        </div>
+    );
+  };
   return (
-    <div className="h-screen bg-teal-50/45">
+    <div className=" bg-teal-50/45 h-screen md:w-[84%] lg:w-[84%] w-[100%]">
     <div>
     <Head name="Journal"/>
     </div>
-    <div className="flex justify-center items-start h-[calc(100vh-60px)] bg-gray-100">
-      <div className="flex-1 max-w-4xl p-4">
+    <div className="flex justify-between w-full items-start max-sm:flex-col ">
+      <div className=" max-w-4xl p-4 ">
         <JournalList Journal={Data} onSelectJournal={handleSelectJournal} />
       </div>
-      <div className="flex justify-start w-full max-w-7xl p-4">
+      <div className="flex justify-start max-sm:hidden max-2xl:flex-2  p-4">
         {selectedJournal ? <JournalDetails Journal={selectedJournal} /> : <p>Select a Journal to view</p>
         }
       </div>
+      <div className="flex justify-start sm:hidden max-2xl:flex-2 p-4">
+        {selectedJournal ? (openJournal? <JournalDetails1 Journal={selectedJournal} /> :null) : <p>Select a Journal to view</p>
+        }
+      </div>
+      
     </div>
   </div>
   )
 }
 
-export default HomeScreen
+export default ListJournal
 

@@ -41,12 +41,12 @@ const Notifications = () => {
 
   const NotificationsList = ({ Notifications, onSelectNotifications })  => {
     return (
-      <div className="h-[calc(100vh-90px)]  w-full flex flex-col">
+      <div className="  w-full flex flex-col">
         <h2 className="text-2xl font-bold text-gray-900"> NOTIFICATIONS </h2>
       {/* Holder */}
       
    
-      <div className="flex bg-white flex-col py-[10px] px-[20px] w-full h-auto overflow-y-scroll">
+      <div className="flex  flex-col py-[10px]  w-full h-auto ">
          {Notifications.map((Notifications)=>(
       
               <div className="  border-b-[1px] bg-teal-900/5  flex flex-col border-y-slate-400 cursor-pointer  w-full p-[20px] mt-[2px] decoration-black" key={Notifications.id} onClick={() => (
@@ -57,15 +57,16 @@ const Notifications = () => {
       } >
         <div className="flex">
           {/* Icon */}
-          <div className="mr-[30px] w-[30px] h-[30px] cursor-pointer flex justify-center items-center  bg-pink-300 rounded-[5px] text-white text-[25px]">
+          <div className="mr-[30px] max-sm:mr-[20px] w-[30px] h-[30px] cursor-pointer flex justify-center items-center  bg-pink-300 rounded-[5px] text-white text-[25px] max-sm:w-[20px] max-sm:h-[20px] max-sm:text-[20px]">
             <RxCross2/>
           </div>
           {/* Text */}
           <div className="flex flex-col w-full">
             {/* First Text */}
             <div className="flex w-full justify-between text-pink-400 items-center">
-              <div className="text-white p-[5px]  rounded-[3px] font-semibold text-[13px] bg-teal-700 mb-[10px]">Prayer Meeting</div>
-              <div className="flex items-center text-[13px]">
+             <div className="flex max-sm:flex-col max-sm:items-start md:w-full w-full md:justify-between items-center">
+             <div className="text-white p-[5px]  rounded-[3px] font-semibold text-[13px] bg-teal-700 mb-[10px] max-sm:text-[10px]">Prayer Meeting</div>
+              <div className="flex items-center text-[13px] mt-[-7px] mb-[6px]">
                 {/* Time Icon */}
                 <div>
                   <FaClock className="mr-[5px]"/>
@@ -74,13 +75,14 @@ const Notifications = () => {
                 <span className="mx-[5px]">at</span>
                 <span>{Notifications.time}</span>
               </div>
+             </div>
 
             </div>
 
             {/* Second text */}
             <div className="flex flex-col">
-              <span className="font-semibold text-black uppercase">{Notifications.title}</span>
-              <span className="font-light my-[5px] text-teal-900">{Notifications.description.substring(0,250)}</span>
+              <span className="font-semibold text-black uppercase max-sm:text-[13px]">{Notifications.title}</span>
+              <span className="font-medium my-[5px] max-sm:text-[12px] text-teal-900">{Notifications.description.substring(0,250)}</span>
               <span className="text-pink-600 text-[12px] font-semibold">Pastor Toyin in Lead</span>
             </div>
 
@@ -106,10 +108,10 @@ const Notifications = () => {
   //   );
   // };
   return (
-    <div className="h-screen bg-teal-50/45">
+    <div className="bg-teal-50/45  md:w-[84%] lg:w-[84%] w-[100%]">
     <Head name="Notifications"/>
      
-    <div className="flex  items-start w-full h-[calc(100vh-60px)] bg-gray-100">
+    <div className="flex  items-start w-full  ">
       <div className=" w-full p-4">
         <NotificationsList Notifications={Data} onSelectNotifications={handleSelectNotifications} />
      

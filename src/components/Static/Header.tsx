@@ -16,7 +16,7 @@ const Header = () => {
             </div>
             {/* Get Started  */}
             <div className="flex gap-10">
-               <Link to='/register'>
+               <Link to='/getstarted'>
                <button className="transform hover:translate-x-10 transition duration-500 ease-in-out text-white font-bold py-2 px-4 rounded-3xl flex items-center bg-gradient-to-r from-teal-600 to-pink-600">Get Started  <HiArrowSmRight size={20} className="mx-2"/></button>
                </Link>
     </div>

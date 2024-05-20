@@ -89,7 +89,7 @@ const InstagramVideoEmbed = () => {
   return (
     <iframe
       src="https://www.instagram.com/reel/C6D1SgKMpnS/embed" // Direct link to the embedded Instagram reel
-      width="40%" // Adjust width as needed
+       // Adjust width as needed
       height="315" // Adjust height to fill the viewport, minus an offset
       frameBorder="0"
       allowTransparency
@@ -97,7 +97,7 @@ const InstagramVideoEmbed = () => {
       scrolling="no" // Prevent scrolling within the iframe
       style={{ borderRadius: '10px' }} 
       // Optional border radius for styling
-      className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+      className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] max-md:w-[100%] max-md:my-[20px] md:mx-[10px] w-[50%]"
     ></iframe>
   );
 };
@@ -105,7 +105,7 @@ const InstagramVideoEmbed = () => {
 const YouTubeEmbed = () => (
  
 
-  <iframe width="40%" height="315" src="https://www.youtube.com/embed/Ns2JG5gc8Kw?si=4E6ZlFqLHon4JbyW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-md"></iframe>
+  <iframe   height="315" src="https://www.youtube.com/embed/Ns2JG5gc8Kw?si=4E6ZlFqLHon4JbyW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-md w-[50%] max-md:w-[100%]"></iframe>
 
 );
 
@@ -113,13 +113,13 @@ const YouTubeEmbed = () => (
 
 
   return (
-    <div className="h-screen bg-teal-50/45 flex flex-col">
+    <div className="bg-teal-50/45 h-screen md:w-[84%] lg:w-[84%] w-[100%]">
     <Head name="Social"/>
    <div className="p-[15px]">
-   <div className="my-[20px] text-[25px] font-bold text-teal-600">View Recent Post on TCN Women Social Media</div>
+   <div className="my-[20px] text-[25px] font-bold max-sm:text-center max-sm:text-[20px] text-teal-600">View Recent Post on TCN Women Social Media</div>
  
    
- <div className="flex w-full justify-between ">
+ <div className="flex w-full justify-between max-md:flex-col ">
  {InstagramVideoEmbed()}
   {YouTubeEmbed()}
  </div>

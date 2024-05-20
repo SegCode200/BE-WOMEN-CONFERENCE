@@ -5,6 +5,7 @@ import { MainRoute } from "./router/mainRoute"
 const App = () => {
   return (
     <div>
+     
       <RouterProvider router={MainRoute}/>
     </div>
   )

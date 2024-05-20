@@ -29,7 +29,7 @@ const Register = () => {
 
     <div >
         <div className="w-full h-screen flex justify-center items-center">
-        <div className="w-full h-auto overflow-hidden flex bg-gradient-to-br from-teal-500 to-pink-500 " >
+        <div className="w-full h-auto overflow-hidden flex bg-gradient-to-br from-teal-500 to-pink-500 max-lg:h-screen" >
             {/* Right Side */}
                 <div className="w-[50%] flex flex-col justify-center  px-[40px]">
                     {/* Logo */}
@@ -87,7 +87,7 @@ const Register = () => {
 
 
             {/* Left Side */}
-            <div className="w-[50%] h-screen relative flex justify-center ">
+            <div className="w-[50%] max-lg:hidden h-screen relative flex justify-center ">
                 <div className="w-full bg-teal-400  h-[0%] absolute z-10">
                         <Slider {...settings}>
               
